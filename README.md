@@ -13,7 +13,7 @@ I implemented two versions
 
 ## 1- without filtering just pagination and Sort 
 Sample:
-http://localhost:8080/news?pageSize=5&pageNo=3&sortBy=+date,-title
+http://localhost:8080/v1/news?pageSize=5&pageNo=3&sortBy=+date,-title
 
 Class :
 io.cryptoapis.news.controller.v1.NewsController
