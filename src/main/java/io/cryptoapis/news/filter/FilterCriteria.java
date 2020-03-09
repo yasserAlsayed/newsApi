@@ -135,12 +135,13 @@ public class FilterCriteria<T extends Comparable<T>> {
 
 		String[] filterSplit = StringUtils.split(filter, ":");
 
-		if (filterSplit.length != 2) {
+		if (filterSplit.length != 2 && !fieldName.contains("date")) { //TODO make date generic
 			throw new IllegalArgumentException("More than one or no separator ':' found");
 		}
-
+		
 		String operation = filterSplit[0];
-		String operationValue = filterSplit[1];
+		
+		String operationValue = !fieldName.contains("date")?filterSplit[1]: StringUtils.substringAfter(filter, ":");//TODO make date generic
 
 		// Convert the operation name to enum
 		this.operation = FilterOperation.fromValue(operation);

@@ -81,13 +81,13 @@
 
 (113,'City of Cartersville paid $380k ransom to restore access to files',
 'Posted by Destry Winant on Mar 05 https://www.scmagazine.com/home/security-news/ransomware/city-of-cartersville-paid-380k-ransom-to-restore-access-to-files/ Almost one year after a ransomware attack struck the city of Cartersville, Ga., municipal officials re…',
-'2020-03-07T17:18:44Z',
+'2020-03-05T17:18:44Z',
 'BreachExchange\r\nmailing list archives\r\nCity of Cartersville paid $380k ransom to restoreaccess to files\r\nFrom: Destry Winant &lt;destry () riskbasedsecurity com&gt;Date: Thu, 5 Mar 2020 09:10:03 -0600\r\nhttps://www.scmagazine.com/home/security-news/ransomware/… 2054 chars'
 ),
 
 (114,'Arweaves Permaweb stops coronavirus censorship, raises $8M',
 'The Chinese government has been removing criticism of its coronavirus response from apps like Weibo, the local equivalent of Twitter. But before it can, that content is being saved, decentralized, and highlighted thanks to Arweaves Permaweb. Today its annou…',
-'2020-03-06T17:15:08Z',
+'2020-03-05T17:15:08Z',
 'The Chinese government has been removing criticism of its coronavirus response from apps like Weibo, the local equivalent of Twitter. But before it can, that content is being saved, decentralized, and highlighted thanks to Arweaves Permaweb. Today its annou… 4043 chars'
 ),
 (115,'Arweave Permaweb stops coronavirus censorship, raises $8M',
@@ -97,21 +97,21 @@
 ),
 (116,'Arweave Permaweb stops coronavirus censorship, raises $8M',
 'The Chinese government has been removing criticism of its coronavirus response from apps like Weibo, the local equivalent of Twitter. Along with video chat apps, Arweave is of the startups benefitting from the unfortunate ripple effects of the tragic coronavi…',
-'2020-03-04T17:15:08Z',
+'2020-03-05T17:15:08Z',
 'The Chinese government has been removing criticism of its coronavirus response from apps like Weibo, the local equivalent of Twitter. But before it can, that content is being saved, decentralized, and highlighted thanks to Arweave Permaweb. Today it is annou… 4624 chars'
 ),
 (117,'PwndLocker Ransomware Gets Pwned: Decryption Now Available',
 'Emsisoft has discovered a way to decrypt files encrypted by the new PwndLocker Ransomware so that victims can recover their files without paying a ransom. [...',
-'2020-03-03T17:02:00Z',
+'2020-03-05T17:02:00Z',
 'Emsisoft has discovered a way to decrypt files encrypted by the new PwndLocker Ransomware so that victims can recover their files without paying a ransom.\r\nWe were the first to report about a relatively new ransomware called PwndLocker that was encrypting org… 1021 chars'
 ),
 (118,'Coronavirus Will Send Bitcoin Price to $100,000 in 2020 — Max Keiser',
 'Bullish as ever, Max Keiser believes that a sky-high Bitcoin price will come this year purely as a result of coronavirus impact on the fiat economy',
-'2020-03-02T17:01:00Z',
+'2020-03-05T17:01:00Z',
 'Bitcoin (BTC) will reach $100,000 and Jamie Dimon will be begging the United States Federal Reserve for money to buy some. \r\nThose were just two of the predictions from Max Keiser on March 5, as the coronavirus outbreak sees financial markets tumble again.\r… 1972 chars'
 ),
 (119,'The Most Powerful Crypto CEO Is Skeptical of Bitcoins Future',
 'Bitcoin was the first-ever cryptocurrency to be created, and the leader of the entire crypto market. So then why is the most powerful crypto company CEO so skeptical of the assets future? Bitcoin Tech Showing Signs of Age, Altcoin Attributes Shine Bitcoin wa…',
-'2020-03-01T17:00:17Z',
+'2020-03-05T17:00:17Z',
 'Bitcoin was the first-ever cryptocurrency to be created, and the leader of the entire crypto market.\r\nSo then why is the most powerful crypto company CEO so skeptical of the assets future?\r\nBitcoin Tech Showing Signs of Age, Altcoin Attributes Shine\r\nBitcoin … 3726 chars'
 );

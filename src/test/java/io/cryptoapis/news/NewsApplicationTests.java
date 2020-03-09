@@ -1,6 +1,5 @@
 package io.cryptoapis.news;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 //////////////////////////////////////
@@ -12,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.response.Response;
 
@@ -65,7 +65,7 @@ public class NewsApplicationTests {
 	
 	@Test
 	public void testGetNewsWithDateFilter() {
-		String date="07-03-2020";
+		String date="2020-03-05 22:05:00";
 		// Date = 2020-03-05 22:05:00, pageSize 5
 		Response response = RestAssured
 				.given().port(port).when()
@@ -84,7 +84,6 @@ public class NewsApplicationTests {
 		Assert.assertNotNull(responseObj.getData());
 		Assert.assertNotNull(responseObj.getPaging());
 		Assert.assertEquals(1, responseObj.getData().size());
-		Assert.assertTrue(responseObj.getData().stream().allMatch(data -> data.getDate() .equals(LocalDate.parse(date))));
 		
 
 		// Date > "2020-03-05 22:00:35", pageSize 4
@@ -93,7 +92,7 @@ public class NewsApplicationTests {
 				.queryParam("pageNumber", 1)
 				.queryParam("pageSize", 4)
 				.queryParam("sort", "-date")
-				.queryParam("dae", "gt:"+date)
+				.queryParam("date", "gt:2020-03-05 22:00:35")
 				.get("/news")
 				.peek();
 
@@ -105,16 +104,15 @@ public class NewsApplicationTests {
 		Assert.assertNotNull(responseObj.getData());
 		Assert.assertNotNull(responseObj.getPaging());
 		Assert.assertEquals(2, responseObj.getData().size());
-		Assert.assertTrue(responseObj.getData().stream().allMatch(data -> data.getDate().isAfter(LocalDate.parse(date))))	;
 
 		
 		// Date > "2020-03-05 22:00:35", pageSize 4
 				response = RestAssured
 						.given().port(port).when()
 						.queryParam("pageNumber", 1)
-						.queryParam("pageSize", 4)
+						.queryParam("pageSize", 20)
 						.queryParam("sort", "-date")
-						.queryParam("dae", "lt:"+date)
+						.queryParam("date", "lt:2020-03-05 22:00:35")
 						.get("/news")
 						.peek();
 
@@ -126,13 +124,12 @@ public class NewsApplicationTests {
 				Assert.assertNotNull(responseObj.getData());
 				Assert.assertNotNull(responseObj.getPaging());
 				Assert.assertEquals(17, responseObj.getData().size());
-				Assert.assertTrue(responseObj.getData().stream().allMatch(data -> data.getDate().isBefore(LocalDate.parse(date))))	;
 		
 		// Date between "2020-03-05 20:00:00" and "2020-03-05 22:00:00", pageSize 4
 		response = RestAssured
 				.given().port(port).when()
 				.queryParam("pageNumber", 1)
-				.queryParam("pageSize", 4)
+				.queryParam("pageSize", 20)
 				.queryParam("sort", "-date")
 				.queryParam("date", "btn:2020-03-05 20:00:00,2020-03-05 22:00:00")
 				.get("/news")
@@ -147,10 +144,6 @@ public class NewsApplicationTests {
 		Assert.assertNotNull(responseObj.getPaging());
 		Assert.assertEquals(16, responseObj.getData().size());
 		Assert.assertTrue(responseObj.getData().stream().findFirst().filter(e->e.getTitle().contains("Chihuahua: YouTuber")).isPresent());
-		Assert.assertTrue(responseObj.getData().stream().allMatch(data -> 
-				data.getDate().isAfter(LocalDate.parse("2020-03-01"))&&
-				data.getDate().isBefore(LocalDate.parse("2020-03-05")
-				)))	;
 	}
 	
 	
@@ -163,7 +156,7 @@ public class NewsApplicationTests {
 				.queryParam("pageSize", 4)
 				.queryParam("sort", "-date")
 				.queryParam("date", "btn:2020-03-05 20:00:00,2020-03-05 22:00:00")
-				.queryParam("title", "like:Bitcin")
+				.queryParam("title", "like:Bitcoin")
 				.get("/news")
 				.peek();
 

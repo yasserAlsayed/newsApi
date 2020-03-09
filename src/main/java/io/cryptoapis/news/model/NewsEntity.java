@@ -1,7 +1,7 @@
 package io.cryptoapis.news.model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +21,7 @@ public class NewsEntity  implements Serializable{
 
 	@Column(name = "DATE")
 	//@Temporal(TemporalType.TIMESTAMP)
-	private LocalDate date;
+	private LocalDateTime date;
 
 	@Column(name = "TITLE")
 	private String title;
@@ -41,11 +41,11 @@ public class NewsEntity  implements Serializable{
 		this.id = id;
 	}
 
-	public LocalDate getDate() {
+	public LocalDateTime getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDate date) {
+	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
 

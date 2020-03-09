@@ -1,7 +1,7 @@
 package io.cryptoapis.news.dto;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class NewsDto implements Serializable {
@@ -13,7 +13,7 @@ public class NewsDto implements Serializable {
 
 	private String text;
 
-	private LocalDate date;
+	private LocalDateTime date;
 
 	@Override
 	public boolean equals(java.lang.Object o) {
@@ -86,11 +86,11 @@ public class NewsDto implements Serializable {
 		this.text = text;
 	}
 
-	public LocalDate getDate() {
+	public LocalDateTime getDate() {
 		return date; 
 	}
 
-	public void setDate(LocalDate date) {
+	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
 

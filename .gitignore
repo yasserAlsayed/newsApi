@@ -1,5 +1,6 @@
+/target/*
+/target/
 /.attach_pid23982
 /.classpath
 /.mvn/
-/.project
 /.settings/

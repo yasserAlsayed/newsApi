@@ -1,5 +1,6 @@
 package io.cryptoapis.news.model;
 
+import java.time.LocalDateTime;
 import java.time.chrono.ChronoLocalDate;
 import java.util.function.Function;
 
@@ -65,7 +66,7 @@ public class NewsFilterSpecification {
 	 * @return
 	 */
 	public Specification<NewsEntity> getDateTypeSpecification(String fieldName, String filterValue) {
-		return getSpecification(fieldName, filterValue, converters.getFunction(ChronoLocalDate.class), dateTypeSpecifications);
+		return getSpecification(fieldName, filterValue, converters.getFunction(LocalDateTime.class), dateTypeSpecifications);
 	}
 
 	/**

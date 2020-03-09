@@ -1,7 +1,7 @@
 package io.cryptoapis.news.filter;
 
-import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -20,7 +20,9 @@ public class Converters {
 		map.put(String.class, s -> s);
 		map.put(Long.class, Long::valueOf);
 		map.put(Integer.class, Integer::valueOf);
-		map.put(ChronoLocalDate.class, LocalDate::parse);
+		map.put(LocalDateTime.class, (text)->{ 
+			return  LocalDateTime.parse(text, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		});
 		// Add more converters
 	}
 
