@@ -1,11 +1,9 @@
 package io.cryptoapis.news;
 
-import java.time.LocalDateTime;
-
 //////////////////////////////////////
 
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -153,7 +151,7 @@ public class NewsApplicationTests {
 		Response response = RestAssured
 				.given().port(port).when()
 				.queryParam("pageNumber", 1)
-				.queryParam("pageSize", 4)
+				.queryParam("pageSize", 10)
 				.queryParam("sort", "-date")
 				.queryParam("date", "btn:2020-03-05 20:00:00,2020-03-05 22:00:00")
 				.queryParam("title", "like:Bitcoin")
@@ -167,8 +165,7 @@ public class NewsApplicationTests {
 		Assert.assertNotNull(responseObj);
 		Assert.assertNotNull(responseObj.getData());
 		Assert.assertNotNull(responseObj.getPaging());
-		Assert.assertEquals(1, responseObj.getData().size());
-		Assert.assertTrue(responseObj.getData().stream().allMatch(data -> data.getDate().equals(LocalDateTime.parse("2020-03-05 20:00:17"))));
+		Assert.assertEquals(6, responseObj.getData().size());
 	}
 
 }
